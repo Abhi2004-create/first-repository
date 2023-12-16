@@ -1,20 +1,33 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
 
-int main (){    
+int main()
+{
+    int i,n;
+    int A[100], temp = 0, max = 0;
+    printf("Enter the number of elements\n");
+    scanf("%d",&n);
+    printf("Enter the elements of array\n");
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &A[i]);
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - 1 - i; j++)
+        {
+            if (A[j] > A[j + 1])
+            {
+                temp = A[j];
+                A[j] = A[j + 1];
+                A[j + 1] = temp;
+            }
+        }
+    }
+    printf("The shorted array is\n");
+    for (i = 0; i < n; i++)
+    {
+        printf("%d\t", A[i]);
+    }
 
-float eng,hin,phy,che,math;
-float total,average,percentage;
-
-scanf("%f%f%f%f%f",&eng,&hin,&phy,&che,&math);
-
-total = eng + hin + phy + che + math;
-percentage = (total/500)*100;
-
-printf("Total marks = %.2f\n",total);
-printf("Percentage = %.2f\n",percentage);
-
-return 0;
-
-
+    return 0;
 }

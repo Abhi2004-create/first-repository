@@ -1,17 +1,24 @@
 #include<stdio.h>
-#include<conio.h>
 
-int main () {
+int main(){
+    int i,num;
+    int A1[5];
+    printf("Enter the elements of array\n");
+    for ( i = 0; i < 5; i++)
+    {
+        scanf("%d",&A1[i]);
 
-int a,b,c;
-printf("Enter the numbers\n");
-scanf("%d%d%d",&a,&b,&c);
-if(a>b && a>c)
-{printf("%d is greater",a);}
-else if(b>a && b>c)
-{printf("%d is greater",b);}
-else
-{printf("%d is greater",c);}
-return 0;
-
+    }
+    printf("Enter the number you want search\n");
+    scanf("%d",&num);
+    for ( i = 0; i < 5; i++)
+    {
+       if(A1[i]==num)
+       {
+        printf("The found number is %d",A1[i]);
+        return 0;
+       }
+    }
+    printf("Element not found");
+    
 }

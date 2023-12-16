@@ -1,15 +1,21 @@
-# include<stdio.h>
-#include<conio.h>
-
-int main() {
-
-float r;
-printf("enter radius\n ");
-scanf("%f",&r);
-
-printf("area is : %.4f\n", 3.14*r*r);
-printf("circumference is : %.4f\n",2*3.14*r);
-
-return 0;
-
+#include <stdio.h>
+void swap(int *x, int *y);
+int main()
+{
+    int a, b;
+    printf("Enter a and b respectively\n");
+    scanf("%d%d", &a, &b);
+    printf("Value before swapping\n");
+    printf("a=%d\nb=%d\n", a, b);
+    swap(&a, &b);
+    printf("Value After swapping\n");
+    printf("a=%d \nb=%d\n", a, b);
+    return 0;
+}
+void swap(int *x, int *y)
+{
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
 }
